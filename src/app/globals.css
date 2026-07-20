@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0c;
+  --ep-blue: #6cacea;
+  --ep-blue-deep: #2f5fb3;
+  --ep-blue-light: #eaf3fd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ep-blue: var(--ep-blue);
+  --color-ep-blue-deep: var(--ep-blue-deep);
+  --color-ep-blue-light: var(--ep-blue-light);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.ep-gradient-text {
+  background: linear-gradient(100deg, var(--ep-blue-deep), var(--ep-blue) 55%, #9fd0ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ep-electric-btn {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(100deg, var(--ep-blue-deep), var(--ep-blue));
+  box-shadow: 0 8px 24px -8px rgba(47, 95, 179, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ep-electric-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px -6px rgba(47, 95, 179, 0.65);
+}
+
+.ep-electric-btn:active {
+  transform: translateY(0);
+}
+
+.ep-glow {
+  background: radial-gradient(60% 60% at 50% 40%, rgba(108, 172, 234, 0.35), transparent 70%);
+  filter: blur(40px);
+}
+
+@keyframes ep-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+.ep-live-dot {
+  animation: ep-pulse 1.8s ease-in-out infinite;
+}
