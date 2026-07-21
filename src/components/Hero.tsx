@@ -14,19 +14,20 @@ export default function Hero() {
           <div className="ep-glow pointer-events-none absolute left-1/2 top-[-25%] h-[480px] w-[480px] -translate-x-1/2 opacity-70" />
 
           <div className="relative">
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/70">
-              Se está armando algo, en modo silencioso 🤫
-            </p>
-
             <h1 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-6xl">
-              Se viene algo{" "}
-              <span className="ep-gradient-text">grande.</span>
+              Creá contenido que{" "}
+              <span className="ep-gradient-text">conecta de verdad.</span>
             </h1>
 
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
-              Taller de creación de contenido para creadores como vos.{" "}
+              Un taller práctico e íntimo para aprender a grabar, editar y
+              contar historias con el teléfono que ya tenés en el bolsillo.
+              Nada de cámaras profesionales, nada de excusas.
+            </p>
+
+            <p className="mt-4 text-sm font-medium text-white/40">
               {EVENT_DATE_LABEL} · {EVENT_TIME_LABEL} · Local de Electronic
-              Point en Palermo.
+              Point en Palermo
             </p>
 
             <div className="mx-auto mt-10 max-w-md">
@@ -38,7 +39,7 @@ export default function Hero() {
                 href={`#${REGISTER_SECTION_ID}`}
                 className="ep-electric-btn w-full rounded-full px-7 py-3.5 text-base font-semibold text-white sm:w-auto"
               >
-                Reservar mi lugar
+                Quiero mi lugar
               </a>
               <a
                 href="#detalles"
@@ -50,7 +51,7 @@ export default function Hero() {
 
             <p className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/40">
               <span className="ep-live-dot h-1.5 w-1.5 rounded-full bg-ep-blue" />
-              Solo {CUPOS_TOTAL} lugares disponibles
+              Solo {CUPOS_TOTAL} cupos — no te quedes afuera
             </p>
           </div>
         </div>
