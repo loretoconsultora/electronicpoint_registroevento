@@ -6,25 +6,33 @@ import {
   EVENT_DATE_LABEL,
   EVENT_TIME_LABEL,
   HERO_VIDEO_SRC,
+  HERO_VIDEO_WEBM_SRC,
 } from "@/lib/event";
 
 export default function Hero() {
   return (
-    <section id="top" className="bg-white px-4 pt-8 pb-16 sm:px-6 sm:pt-12 sm:pb-24">
-      <div className="mx-auto max-w-5xl">
+    <section
+      id="top"
+      className="relative overflow-hidden px-4 pt-8 pb-16 sm:px-6 sm:pt-12 sm:pb-24"
+    >
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src={HERO_VIDEO_WEBM_SRC} type="video/webm" />
+        <source src={HERO_VIDEO_SRC} type="video/mp4" />
+      </video>
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" />
+
+      <div className="relative mx-auto max-w-5xl">
         <div className="relative rounded-t-[2.5rem] rounded-b-lg bg-gradient-to-b from-zinc-300 via-zinc-100 to-zinc-300 p-2.5 pt-4 shadow-2xl sm:p-4 sm:pt-5">
           <div className="absolute left-1/2 top-1.5 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-zinc-500 sm:top-2" />
 
           <div className="relative overflow-hidden rounded-[1.75rem] bg-black px-6 py-14 text-center sm:rounded-[2rem] sm:px-14 sm:py-20">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 h-full w-full object-cover opacity-40"
-              src={HERO_VIDEO_SRC}
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black" />
             <div className="ep-glow pointer-events-none absolute left-1/2 top-[-25%] h-[480px] w-[480px] -translate-x-1/2 opacity-50" />
 
             <div className="relative">

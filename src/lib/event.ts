@@ -13,7 +13,7 @@ export const REGISTER_SECTION_ID = "registro";
 
 // ID del video de YouTube a embeber (la parte después de "v=" en la URL).
 // Dejar vacío hasta tener el video publicado: se muestra un placeholder.
-export const YOUTUBE_VIDEO_ID = "";
+export const YOUTUBE_VIDEO_ID = "BTzoiC2YO88";
 
 // Fotos del local/evento para la galería.
 export const GALLERY_IMAGES: string[] = [
@@ -22,8 +22,9 @@ export const GALLERY_IMAGES: string[] = [
   "/local-3.jpg",
 ];
 
-// Video de fondo del hero (cielo). Subir el archivo a /public/hero-sky.mp4.
+// Video de fondo del hero (cielo).
 export const HERO_VIDEO_SRC = "/hero-sky.mp4";
+export const HERO_VIDEO_WEBM_SRC = "/hero-sky.webm";
 
 // Ícono del logo para la nav bar. Subir el archivo a /public/logo-icon.png.
 export const LOGO_ICON_SRC = "/logo-icon.png";

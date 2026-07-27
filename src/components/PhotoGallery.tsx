@@ -13,12 +13,12 @@ export default function PhotoGallery() {
           </h2>
         </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+        <div className="mt-10 flex flex-wrap justify-center gap-3 sm:gap-4">
           {GALLERY_IMAGES.length > 0
             ? GALLERY_IMAGES.map((src) => (
                 <div
                   key={src}
-                  className="relative aspect-square overflow-hidden rounded-2xl bg-black/5"
+                  className="relative h-40 w-40 shrink-0 overflow-hidden rounded-2xl bg-black/5 sm:h-56 sm:w-56"
                 >
                   <Image
                     src={src}
@@ -31,7 +31,7 @@ export default function PhotoGallery() {
             : Array.from({ length: PLACEHOLDER_COUNT }).map((_, index) => (
                 <div
                   key={index}
-                  className="flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-black/15 bg-ep-blue-light/40 text-black/30"
+                  className="flex h-40 w-40 shrink-0 flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-black/15 bg-ep-blue-light/40 text-black/30 sm:h-56 sm:w-56"
                 >
                   <span className="text-2xl">📷</span>
                   <span className="text-xs font-medium">Foto próximamente</span>
