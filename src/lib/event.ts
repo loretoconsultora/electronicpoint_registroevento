@@ -25,3 +25,6 @@ export const HERO_VIDEO_SRC = "/hero-sky.mp4";
 
 // Ícono del logo para la nav bar. Subir el archivo a /public/logo-icon.png.
 export const LOGO_ICON_SRC = "/logo-icon.png";
+
+// Foto de la instructora. Subir el archivo a /public/instructor-angela.jpg.
+export const INSTRUCTOR_PHOTO_SRC = "/instructor-angela.jpg";

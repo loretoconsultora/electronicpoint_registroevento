@@ -77,3 +77,33 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+@keyframes ep-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ep-marquee {
+  animation: ep-marquee 16s linear infinite;
+}
+
+.ep-marquee-fade {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
