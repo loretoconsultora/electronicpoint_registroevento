@@ -15,9 +15,12 @@ export const REGISTER_SECTION_ID = "registro";
 // Dejar vacío hasta tener el video publicado: se muestra un placeholder.
 export const YOUTUBE_VIDEO_ID = "";
 
-// Fotos del local/evento para la galería. Agregar los archivos a /public/gallery
-// y completar las rutas acá (ej. "/gallery/local-1.jpg"). Vacío = placeholders.
-export const GALLERY_IMAGES: string[] = [];
+// Fotos del local/evento para la galería.
+export const GALLERY_IMAGES: string[] = [
+  "/local-1.jpg",
+  "/local-2.jpg",
+  "/local-3.jpg",
+];
 
 // Video de fondo del hero (cielo). Subir el archivo a /public/hero-sky.mp4.
 export const HERO_VIDEO_SRC = "/hero-sky.mp4";
