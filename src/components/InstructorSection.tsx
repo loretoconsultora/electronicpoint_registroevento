@@ -28,9 +28,15 @@ export default function InstructorSection() {
               Angela Coello
             </h3>
             <p className="mt-2 text-black/60">
-              Lidera marcas en Buenos Aires y va a compartir, en vivo, el
-              método que usa con sus clientes para crear contenido —desde el
-              guion hasta la edición final— con nada más que un iPhone.
+              Creadora de Estrategias Digitales y Contenido Audiovisual que
+              conecta con la comunidad de cada marca, su enfoque combina la
+              estética visual, la edición técnica y las tendencias del
+              ecosistema digital para comunicar con propósito.
+            </p>
+            <p className="mt-3 text-black/60">
+              En este taller, te va a mostrar cómo pasar de la idea a la
+              ejecución con herramientas prácticas para destacar en redes
+              sociales.
             </p>
           </div>
         </div>
