@@ -63,7 +63,7 @@ function PillGroup({
     <div
       className={
         nowrap
-          ? "flex flex-nowrap gap-2 overflow-x-auto pb-1"
+          ? "flex flex-wrap gap-2 sm:flex-nowrap sm:overflow-x-auto sm:pb-1"
           : "flex flex-wrap gap-2"
       }
     >
@@ -75,10 +75,8 @@ function PillGroup({
             type="button"
             onClick={() => onChange(option)}
             aria-pressed={selected}
-            className={`rounded-full border font-medium transition-colors ${
-              nowrap
-                ? "shrink-0 whitespace-nowrap px-3 py-2 text-[13px]"
-                : "px-4 py-2.5 text-sm"
+            className={`rounded-full border px-4 py-2.5 text-sm font-medium transition-colors ${
+              nowrap ? "sm:shrink-0 sm:whitespace-nowrap sm:px-3 sm:py-2 sm:text-[13px]" : ""
             } ${
               selected
                 ? "border-transparent bg-ep-blue-deep text-white"
