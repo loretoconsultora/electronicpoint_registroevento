@@ -27,9 +27,6 @@ export default function CurriculumAccordion() {
               <span className="flex-1 text-sm font-semibold text-white sm:text-base">
                 {block.title}
               </span>
-              <span className="shrink-0 rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-white/70">
-                {block.duration}
-              </span>
               <span
                 className={`shrink-0 text-white/50 transition-transform duration-200 ${
                   isOpen ? "rotate-180" : ""

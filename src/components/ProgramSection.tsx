@@ -1,5 +1,5 @@
 import CurriculumAccordion from "./CurriculumAccordion";
-import { EVENT_DURATION_LABEL, YOUTUBE_VIDEO_ID } from "@/lib/event";
+import { YOUTUBE_VIDEO_ID } from "@/lib/event";
 
 export default function ProgramSection() {
   return (
@@ -9,16 +9,9 @@ export default function ProgramSection() {
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold text-white">
-            {EVENT_DURATION_LABEL}
-          </span>
-          <h2 className="mx-auto mt-5 max-w-xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+          <h2 className="mx-auto max-w-xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
             Mirá de qué se trata
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/70">
-            El programa completo, minuto a minuto, y un adelanto en video de
-            lo que te espera.
-          </p>
         </div>
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 sm:items-start sm:gap-10">
