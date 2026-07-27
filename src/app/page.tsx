@@ -25,7 +25,7 @@ export default function Home() {
           className="border-t border-black/5 bg-black px-5 py-20 sm:px-8 sm:py-28"
         >
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Registrate al taller
             </h2>
             <p className="mx-auto mt-3 max-w-md text-white/60">

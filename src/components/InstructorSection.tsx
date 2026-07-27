@@ -9,8 +9,8 @@ import {
 export default function InstructorSection() {
   return (
     <section className="border-t border-black/5 bg-white px-5 py-16 sm:px-8 sm:py-20">
-      <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 sm:gap-8">
-        <div className="flex flex-col items-center gap-6 rounded-3xl border border-black/10 bg-black/[0.02] p-8 text-center sm:flex-row sm:gap-8 sm:text-left">
+      <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-5 sm:gap-8">
+        <div className="flex flex-col items-center gap-6 rounded-3xl border border-black/10 bg-black/[0.02] p-8 text-center sm:col-span-3 sm:flex-row sm:gap-8 sm:text-left">
           <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full bg-ep-blue-deep">
             <Image
               src={INSTRUCTOR_PHOTO_SRC}
@@ -41,7 +41,7 @@ export default function InstructorSection() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center gap-6 rounded-3xl border border-black/10 bg-black/[0.02] p-8 text-center sm:text-left">
+        <div className="flex flex-col justify-center gap-6 rounded-3xl border border-black/10 bg-black/[0.02] p-8 text-center sm:col-span-2 sm:text-left">
           <div>
             <p className="ep-metallic-text text-2xl font-bold tracking-tight sm:text-3xl">
               ¿Cuándo?

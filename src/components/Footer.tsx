@@ -5,10 +5,6 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-gradient-to-br from-ep-blue-deep via-[#274c8f] to-ep-blue-deep px-5 py-12 sm:px-8">
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
-        <p className="text-base font-semibold tracking-tight text-white">
-          Electronic Point
-        </p>
-
         <div className="flex flex-wrap items-center justify-center gap-3">
           <a
             href={INSTAGRAM_URL}
