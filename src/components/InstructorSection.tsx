@@ -8,7 +8,7 @@ export default function InstructorSection() {
         <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full bg-ep-blue-deep">
           <Image
             src={INSTRUCTOR_PHOTO_SRC}
-            alt="Angela"
+            alt="Angela Coello"
             fill
             sizes="96px"
             className="object-cover object-top"
@@ -16,10 +16,10 @@ export default function InstructorSection() {
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-ep-blue-deep">
-            Tu instructora
+            Ponente
           </p>
           <h3 className="mt-1 text-xl font-semibold tracking-tight sm:text-2xl">
-            Angela
+            Angela Coello
           </h3>
           <p className="mt-2 text-black/60">
             Lidera marcas en Buenos Aires y va a compartir, en vivo, el

@@ -66,11 +66,9 @@ body {
   background: linear-gradient(
     110deg,
     var(--ep-blue-deep) 0%,
-    #cfe4fa 20%,
-    var(--ep-blue) 38%,
-    #ffffff 52%,
-    var(--ep-blue) 66%,
-    #cfe4fa 84%,
+    var(--ep-blue) 30%,
+    var(--ep-blue-deep) 50%,
+    var(--ep-blue) 70%,
     var(--ep-blue-deep) 100%
   );
   -webkit-background-clip: text;

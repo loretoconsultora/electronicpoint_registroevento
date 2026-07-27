@@ -5,11 +5,11 @@ export default function ProgramSection() {
   return (
     <section
       id="programa"
-      className="border-t border-black/5 bg-gradient-to-br from-ep-blue-deep via-[#274c8f] to-ep-blue-deep px-5 py-20 sm:px-8 sm:py-28"
+      className="border-t border-black/5 bg-white px-5 py-20 sm:px-8 sm:py-28"
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
-          <h2 className="mx-auto max-w-xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+          <h2 className="ep-metallic-text mx-auto max-w-xl text-2xl font-semibold tracking-tight sm:text-3xl">
             Mirá de qué se trata
           </h2>
         </div>
@@ -20,7 +20,7 @@ export default function ProgramSection() {
           </div>
 
           <div className="order-1 sm:sticky sm:top-24 sm:order-2">
-            <div className="relative aspect-video overflow-hidden rounded-3xl border border-white/15 bg-black">
+            <div className="relative aspect-video overflow-hidden rounded-3xl border border-black/10 bg-black">
               {YOUTUBE_VIDEO_ID ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}`}
