@@ -22,7 +22,7 @@ export default function AboutSection() {
           {MARQUEE_ITEMS.map((item, index) => (
             <span
               key={`${item}-${index}`}
-              className="shrink-0 rounded-full border border-white/20 bg-white/10 px-6 py-2.5 text-sm font-medium text-white sm:text-base"
+              className="ep-metallic-silver-text shrink-0 rounded-full border border-white/20 bg-white/10 px-6 py-2.5 text-sm font-bold sm:text-base"
             >
               {item}
             </span>

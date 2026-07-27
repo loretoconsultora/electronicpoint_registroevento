@@ -5,10 +5,9 @@ export const EVENT_TIME_NOTE = "Horario estimado, se confirma más cerca de la f
 export const EVENT_DURATION_LABEL = "45 min de contenido 100% práctico";
 export const EVENT_ADDRESS = "Costa Rica 5509, Palermo, CABA";
 export const EVENT_ADDRESS_SHORT = "Costa Rica 5509, Palermo";
-export const MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=Costa+Rica+5509%2C+Palermo%2C+CABA";
+export const MAPS_URL = "https://maps.app.goo.gl/hboyZhnkp8FSoKyHA";
 export const INSTAGRAM_URL = "https://www.instagram.com/electronicpoint.ar/";
-export const WHATSAPP_URL = "https://wa.link/27matt";
+export const WHATSAPP_URL = "https://wa.link/u4zgdr";
 export const CUPOS_TOTAL = 15;
 export const REGISTER_SECTION_ID = "registro";
 

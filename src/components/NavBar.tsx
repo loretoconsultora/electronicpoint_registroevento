@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { LOGO_ICON_SRC, REGISTER_SECTION_ID } from "@/lib/event";
+import { LOGO_ICON_SRC } from "@/lib/event";
+import OpenRegistrationButton from "./OpenRegistrationButton";
 
 export default function NavBar() {
   return (
@@ -18,12 +19,9 @@ export default function NavBar() {
           </span>
         </a>
 
-        <a
-          href={`#${REGISTER_SECTION_ID}`}
-          className="ep-electric-btn shrink-0 rounded-full px-4 py-2 text-xs font-semibold text-white sm:px-5 sm:text-sm"
-        >
+        <OpenRegistrationButton className="ep-electric-btn shrink-0 rounded-full px-4 py-2 text-xs font-semibold text-white sm:px-5 sm:text-sm">
           Registrarme
-        </a>
+        </OpenRegistrationButton>
       </div>
     </header>
   );

@@ -76,6 +76,20 @@ body {
   color: transparent;
 }
 
+.ep-metallic-silver-text {
+  background: linear-gradient(
+    110deg,
+    #b9c2cc 0%,
+    #ffffff 25%,
+    #929ba6 50%,
+    #ffffff 75%,
+    #b9c2cc 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 @keyframes ep-marquee {
   from {
     transform: translateX(0);

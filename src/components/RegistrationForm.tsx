@@ -24,6 +24,8 @@ const EQUIPO_OPTIONS = [
 
 const ASISTENCIA_OPTIONS = ["Sí, claro", "No estoy segur@"];
 
+type Variant = "light" | "dark";
+
 interface FormState {
   nombre: string;
   telefono: string;
@@ -48,12 +50,14 @@ function PillGroup({
   options,
   onChange,
   nowrap = false,
+  variant,
 }: {
   name: string;
   value: string;
   options: string[];
   onChange: (value: string) => void;
   nowrap?: boolean;
+  variant: Variant;
 }) {
   return (
     <div
@@ -78,7 +82,9 @@ function PillGroup({
             } ${
               selected
                 ? "border-transparent bg-ep-blue-deep text-white"
-                : "border-black/10 bg-white text-black/70 hover:bg-black/[0.03]"
+                : variant === "dark"
+                  ? "border-white/15 bg-white/5 text-white/70 hover:bg-white/10"
+                  : "border-black/10 bg-white text-black/70 hover:bg-black/[0.03]"
             }`}
           >
             {option}
@@ -90,12 +96,18 @@ function PillGroup({
   );
 }
 
-export default function RegistrationForm() {
+export default function RegistrationForm({
+  variant = "light",
+}: {
+  variant?: Variant;
+}) {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
   const [errorMessage, setErrorMessage] = useState("");
+
+  const isDark = variant === "dark";
 
   const isComplete =
     form.nombre.trim().length > 1 &&
@@ -136,12 +148,22 @@ export default function RegistrationForm() {
 
   if (status === "success") {
     return (
-      <div className="mx-auto max-w-xl rounded-3xl border border-black/5 bg-ep-blue-light/60 p-8 text-center sm:p-12">
+      <div
+        className={`mx-auto max-w-xl rounded-3xl border p-8 text-center sm:p-12 ${
+          isDark
+            ? "border-white/10 bg-white/5"
+            : "border-black/5 bg-ep-blue-light/60"
+        }`}
+      >
         <span className="text-4xl">🎉</span>
-        <h3 className="mt-4 text-2xl font-semibold tracking-tight">
+        <h3
+          className={`mt-4 text-2xl font-semibold tracking-tight ${
+            isDark ? "text-white" : ""
+          }`}
+        >
           ¡Listo, {form.nombre.split(" ")[0]}!
         </h3>
-        <p className="mt-3 text-black/60">
+        <p className={`mt-3 ${isDark ? "text-white/60" : "text-black/60"}`}>
           Tu lugar quedó registrado para el {EVENT_DATE_LABEL} a las{" "}
           {EVENT_TIME_LABEL} en nuestro local de Palermo. Te vamos a
           contactar por WhatsApp para confirmar los últimos detalles.
@@ -159,7 +181,11 @@ export default function RegistrationForm() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-black/10 px-6 py-3 text-sm font-semibold text-black/70 hover:bg-black/[0.03]"
+            className={`rounded-full border px-6 py-3 text-sm font-semibold transition-colors ${
+              isDark
+                ? "border-white/15 text-white/80 hover:bg-white/5"
+                : "border-black/10 text-black/70 hover:bg-black/[0.03]"
+            }`}
           >
             Seguinos en Instagram
           </a>
@@ -167,6 +193,15 @@ export default function RegistrationForm() {
       </div>
     );
   }
+
+  const labelClass = `mb-2 block text-sm font-semibold ${
+    isDark ? "text-white/80" : "text-black/80"
+  }`;
+  const inputClass = `w-full rounded-2xl border px-4 py-3 text-base outline-none transition-colors focus:border-ep-blue ${
+    isDark
+      ? "border-white/15 bg-white/5 text-white placeholder:text-white/30"
+      : "border-black/10 bg-white text-black focus:border-ep-blue-deep"
+  }`;
 
   return (
     <form onSubmit={handleSubmit} className="mx-auto max-w-xl space-y-7">
@@ -181,10 +216,7 @@ export default function RegistrationForm() {
       />
 
       <div>
-        <label
-          htmlFor="nombre"
-          className="mb-2 block text-sm font-semibold text-black/80"
-        >
+        <label htmlFor="nombre" className={labelClass}>
           Nombre
         </label>
         <input
@@ -194,15 +226,12 @@ export default function RegistrationForm() {
           value={form.nombre}
           onChange={(e) => setForm((f) => ({ ...f, nombre: e.target.value }))}
           placeholder="Tu nombre completo"
-          className="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-base outline-none transition-colors focus:border-ep-blue-deep"
+          className={inputClass}
         />
       </div>
 
       <div>
-        <label
-          htmlFor="telefono"
-          className="mb-2 block text-sm font-semibold text-black/80"
-        >
+        <label htmlFor="telefono" className={labelClass}>
           Teléfono
         </label>
         <input
@@ -214,25 +243,24 @@ export default function RegistrationForm() {
             setForm((f) => ({ ...f, telefono: e.target.value }))
           }
           placeholder="11 1234 5678"
-          className="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-base outline-none transition-colors focus:border-ep-blue-deep"
+          className={inputClass}
         />
       </div>
 
       <div>
-        <p className="mb-2 text-sm font-semibold text-black/80">
-          ¿Qué opción te describe mejor?
-        </p>
+        <p className={labelClass}>¿Qué opción te describe mejor?</p>
         <PillGroup
           name="perfil"
           value={form.perfil}
           options={PERFIL_OPTIONS}
           onChange={(value) => setForm((f) => ({ ...f, perfil: value }))}
           nowrap
+          variant={variant}
         />
       </div>
 
       <div>
-        <p className="mb-2 text-sm font-semibold text-black/80">
+        <p className={labelClass}>
           ¿Con qué equipo creás actualmente tu contenido?
         </p>
         <PillGroup
@@ -240,23 +268,27 @@ export default function RegistrationForm() {
           value={form.equipo}
           options={EQUIPO_OPTIONS}
           onChange={(value) => setForm((f) => ({ ...f, equipo: value }))}
+          variant={variant}
         />
       </div>
 
       <div>
-        <p className="mb-2 text-sm font-semibold text-black/80">
-          ¿Confirmás tu asistencia al evento?
-        </p>
+        <p className={labelClass}>¿Confirmás tu asistencia al evento?</p>
         <PillGroup
           name="asistencia"
           value={form.asistencia}
           options={ASISTENCIA_OPTIONS}
           onChange={(value) => setForm((f) => ({ ...f, asistencia: value }))}
+          variant={variant}
         />
       </div>
 
       {status === "error" && (
-        <p className="rounded-2xl bg-red-50 px-4 py-3 text-sm font-medium text-red-600">
+        <p
+          className={`rounded-2xl px-4 py-3 text-sm font-medium ${
+            isDark ? "bg-red-500/10 text-red-300" : "bg-red-50 text-red-600"
+          }`}
+        >
           {errorMessage}
         </p>
       )}
@@ -269,7 +301,11 @@ export default function RegistrationForm() {
         {status === "loading" ? "Enviando…" : "Confirmar mi lugar"}
       </button>
 
-      <p className="text-center text-xs text-black/40">
+      <p
+        className={`text-center text-xs ${
+          isDark ? "text-white/40" : "text-black/40"
+        }`}
+      >
         Quedan pocos de los {CUPOS_TOTAL} lugares disponibles.
       </p>
     </form>
