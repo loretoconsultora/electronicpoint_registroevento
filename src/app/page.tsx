@@ -5,7 +5,6 @@ import ProgramSection from "@/components/ProgramSection";
 import AboutSection from "@/components/AboutSection";
 import InstructorSection from "@/components/InstructorSection";
 import PhotoGallery from "@/components/PhotoGallery";
-import DetailsSection from "@/components/DetailsSection";
 import CuposSection from "@/components/CuposSection";
 import RegistrationForm from "@/components/RegistrationForm";
 import Footer from "@/components/Footer";
@@ -22,7 +21,6 @@ export default function Home() {
         <AboutSection />
         <InstructorSection />
         <PhotoGallery />
-        <DetailsSection />
         <CuposSection />
         <section
           id={REGISTER_SECTION_ID}
