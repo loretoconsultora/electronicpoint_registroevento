@@ -37,13 +37,8 @@ export default function Hero() {
                 <span className="ep-metallic-text">De la Idea a tu perfil</span>
               </h1>
 
-              <p className="mx-auto mt-5 max-w-xl">
-                <span className="block text-lg font-semibold text-white sm:text-xl">
-                  Aprendé el Método: Guionización, Producción y Edición
-                </span>
-                <span className="mt-1.5 block text-base text-white/60 sm:text-lg">
-                  Todo con tu celular que ya tenés en el bolsillo.
-                </span>
+              <p className="mx-auto mt-5 max-w-xl text-lg font-semibold text-white sm:text-xl">
+                Aprendé el Método: Guionización, Producción y Edición
               </p>
 
               <div className="mx-auto mt-7 space-y-1.5 text-lg font-semibold text-white sm:text-xl">

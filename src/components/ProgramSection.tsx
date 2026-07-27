@@ -1,4 +1,5 @@
 import CurriculumAccordion from "./CurriculumAccordion";
+import OpenRegistrationButton from "./OpenRegistrationButton";
 import { YOUTUBE_VIDEO_ID } from "@/lib/event";
 
 export default function ProgramSection() {
@@ -9,7 +10,7 @@ export default function ProgramSection() {
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
-          <h2 className="ep-metallic-text mx-auto max-w-xl text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="ep-metallic-text mx-auto max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl">
             Mirá de qué se trata
           </h2>
         </div>
@@ -17,6 +18,11 @@ export default function ProgramSection() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2 sm:items-start sm:gap-10">
           <div className="order-2 sm:order-1">
             <CurriculumAccordion />
+            <div className="mt-6 text-center">
+              <OpenRegistrationButton className="ep-electric-btn w-full rounded-full px-7 py-3.5 text-base font-semibold text-white sm:w-auto">
+                Quiero mi lugar
+              </OpenRegistrationButton>
+            </div>
           </div>
 
           <div className="order-1 sm:sticky sm:top-24 sm:order-2">

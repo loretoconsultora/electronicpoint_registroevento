@@ -8,13 +8,9 @@ export default function PhotoGallery() {
     <section className="border-t border-black/5 bg-white px-5 py-20 sm:px-8 sm:py-28">
       <div className="mx-auto max-w-4xl">
         <div className="text-center">
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            Así es nuestro local en Palermo
+          <h2 className="ep-metallic-text mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+            Electronic Point tus Aliados GEEKS
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-black/60">
-            El lugar donde va a pasar todo. Muy pronto vas a poder ver fotos
-            del espacio.
-          </p>
         </div>
 
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">

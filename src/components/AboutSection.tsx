@@ -12,7 +12,7 @@ export default function AboutSection() {
   return (
     <section className="border-t border-black/5 bg-gradient-to-br from-ep-blue-deep via-[#274c8f] to-ep-blue-deep py-14 sm:py-16">
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
-        <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+        <h2 className="text-3xl font-semibold uppercase tracking-tight text-white sm:text-4xl">
           Es para vos si sos
         </h2>
       </div>
@@ -22,7 +22,7 @@ export default function AboutSection() {
           {MARQUEE_ITEMS.map((item, index) => (
             <span
               key={`${item}-${index}`}
-              className="ep-metallic-silver-text shrink-0 rounded-full border border-white/20 bg-white/10 px-6 py-2.5 text-sm font-bold sm:text-base"
+              className="shrink-0 rounded-full bg-white/10 px-6 py-2.5 text-sm font-bold text-white sm:text-base"
             >
               {item}
             </span>

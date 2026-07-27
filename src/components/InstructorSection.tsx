@@ -44,7 +44,7 @@ export default function InstructorSection() {
         <div className="flex flex-col justify-center gap-6 rounded-3xl border border-black/10 bg-black/[0.02] p-8 text-center sm:text-left">
           <div>
             <p className="ep-metallic-text text-2xl font-bold tracking-tight sm:text-3xl">
-              ¿CUÁNDO?
+              ¿Cuándo?
             </p>
             <p className="mt-1.5 text-lg font-medium text-black sm:text-xl">
               {EVENT_DATE_LABEL} | {EVENT_TIME_LABEL}
@@ -52,7 +52,7 @@ export default function InstructorSection() {
           </div>
           <div>
             <p className="ep-metallic-text text-2xl font-bold tracking-tight sm:text-3xl">
-              ¿DÓNDE?
+              ¿Dónde?
             </p>
             <p className="mt-1.5 text-lg font-medium text-black sm:text-xl">
               Local de Electronic Point ({EVENT_ADDRESS})
