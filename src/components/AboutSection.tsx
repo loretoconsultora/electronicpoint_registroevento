@@ -12,18 +12,14 @@ export default function AboutSection() {
         <div className="grid gap-12 sm:grid-cols-2 sm:gap-16">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              ¿De qué se trata?
+              Un taller íntimo, no un webinar más
             </h2>
             <div className="mt-5 space-y-4 text-base leading-relaxed text-black/60 sm:text-lg">
               <p>
-                Lo estamos preparando en el equipo, en modo silencioso, pero
-                ahora ya lo sabés vos también: un taller de creación de
-                contenido, armado acá mismo, en nuestro hogar.
-              </p>
-              <p>
-                Nada de equipos profesionales carísimos. Vamos a crear con lo
-                que ya tenemos a mano: iPhone, iPad, celular. Va a ser algo
-                íntimo, con cafecito y buena onda humana.
+                Lo armamos acá mismo, en nuestro local de Palermo: cupos
+                limitados, cafecito y buena onda humana. Nada de equipos
+                profesionales carísimos —creamos con lo que ya tenemos a
+                mano: iPhone, iPad, celular.
               </p>
               <p className="font-medium text-black">
                 Si te copa crear contenido y querés venir en persona, te

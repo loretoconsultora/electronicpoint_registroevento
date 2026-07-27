@@ -14,15 +14,19 @@ export default function Hero() {
           <div className="ep-glow pointer-events-none absolute left-1/2 top-[-25%] h-[480px] w-[480px] -translate-x-1/2 opacity-70" />
 
           <div className="relative">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-ep-blue">
+              Taller intensivo con Angela
+            </p>
+
             <h1 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-6xl">
-              Creá contenido que{" "}
-              <span className="ep-gradient-text">conecta de verdad.</span>
+              De grabar sin rumbo a publicar contenido que{" "}
+              <span className="ep-gradient-text">vende.</span>
             </h1>
 
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
-              Un taller práctico e íntimo para aprender a grabar, editar y
-              contar historias con el teléfono que ya tenés en el bolsillo.
-              Nada de cámaras profesionales, nada de excusas.
+              En una sola tarde vas a aprender el método completo —guion,
+              cámara y edición— para grabar contenido profesional con el
+              iPhone que ya tenés en el bolsillo. Sin gastar en equipo caro.
             </p>
 
             <p className="mt-4 text-sm font-medium text-white/40">
@@ -42,10 +46,10 @@ export default function Hero() {
                 Quiero mi lugar
               </a>
               <a
-                href="#detalles"
+                href="#programa"
                 className="w-full rounded-full border border-white/15 px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/5 sm:w-auto"
               >
-                Ver detalles
+                Ver el programa
               </a>
             </div>
 
