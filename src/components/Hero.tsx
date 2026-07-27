@@ -34,13 +34,12 @@ export default function Hero() {
 
               <h1 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-6xl">
                 Taller de Creación de Contenido:{" "}
-                <span className="ep-gradient-text">De la Idea a tu perfil</span>
+                <span className="ep-metallic-text">De la Idea a tu perfil</span>
               </h1>
 
               <p className="mx-auto mt-5 max-w-xl">
                 <span className="block text-lg font-semibold text-white sm:text-xl">
-                  Aprendé el Método Completo: Guionización, Producción y
-                  Edición
+                  Aprendé el Método: Guionización, Producción y Edición
                 </span>
                 <span className="mt-1.5 block text-base text-white/60 sm:text-lg">
                   Todo con tu celular que ya tenés en el bolsillo.
@@ -49,8 +48,9 @@ export default function Hero() {
 
               <div className="mx-auto mt-7 space-y-1.5 text-lg font-semibold text-white sm:text-xl">
                 <p>📅 {EVENT_DATE_LABEL}</p>
-                <p>🕕 {EVENT_TIME_LABEL}</p>
-                <p>📍 {EVENT_ADDRESS_SHORT}</p>
+                <p>
+                  🕕 {EVENT_TIME_LABEL} 📍 {EVENT_ADDRESS_SHORT}
+                </p>
               </div>
 
               <div className="mx-auto mt-10 max-w-md">
@@ -63,9 +63,11 @@ export default function Hero() {
                 </OpenRegistrationButton>
                 <a
                   href="#programa"
-                  className="w-full rounded-full border border-white/15 px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/5 sm:w-auto"
+                  className="w-full rounded-full bg-gradient-to-r from-ep-blue-deep via-ep-blue to-ep-blue-deep p-[1.5px] transition-opacity hover:opacity-90 sm:w-auto"
                 >
-                  Ver el programa
+                  <span className="flex items-center justify-center rounded-full bg-black px-7 py-3.5 text-base font-semibold text-white">
+                    Ver el programa
+                  </span>
                 </a>
               </div>
 

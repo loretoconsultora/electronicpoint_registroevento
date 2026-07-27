@@ -13,7 +13,7 @@ const PERFIL_OPTIONS = [
   "Creador de Contenido",
   "Emprendedor",
   "Marketing",
-  "Para uso personal",
+  "Uso personal",
 ];
 
 const EQUIPO_OPTIONS = [
@@ -47,14 +47,22 @@ function PillGroup({
   value,
   options,
   onChange,
+  nowrap = false,
 }: {
   name: string;
   value: string;
   options: string[];
   onChange: (value: string) => void;
+  nowrap?: boolean;
 }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div
+      className={
+        nowrap
+          ? "flex flex-nowrap gap-2 overflow-x-auto pb-1"
+          : "flex flex-wrap gap-2"
+      }
+    >
       {options.map((option) => {
         const selected = value === option;
         return (
@@ -63,7 +71,11 @@ function PillGroup({
             type="button"
             onClick={() => onChange(option)}
             aria-pressed={selected}
-            className={`rounded-full border px-4 py-2.5 text-sm font-medium transition-colors ${
+            className={`rounded-full border font-medium transition-colors ${
+              nowrap
+                ? "shrink-0 whitespace-nowrap px-3 py-2 text-[13px]"
+                : "px-4 py-2.5 text-sm"
+            } ${
               selected
                 ? "border-transparent bg-ep-blue-deep text-white"
                 : "border-black/10 bg-white text-black/70 hover:bg-black/[0.03]"
@@ -215,6 +227,7 @@ export default function RegistrationForm() {
           value={form.perfil}
           options={PERFIL_OPTIONS}
           onChange={(value) => setForm((f) => ({ ...f, perfil: value }))}
+          nowrap
         />
       </div>
 

@@ -1,8 +1,7 @@
 import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 import TransformationSection from "@/components/TransformationSection";
-import VideoSection from "@/components/VideoSection";
-import CurriculumSection from "@/components/CurriculumSection";
+import ProgramSection from "@/components/ProgramSection";
 import AboutSection from "@/components/AboutSection";
 import InstructorSection from "@/components/InstructorSection";
 import PhotoGallery from "@/components/PhotoGallery";
@@ -19,8 +18,7 @@ export default function Home() {
       <main className="flex flex-1 flex-col">
         <Hero />
         <TransformationSection />
-        <VideoSection />
-        <CurriculumSection />
+        <ProgramSection />
         <AboutSection />
         <InstructorSection />
         <PhotoGallery />

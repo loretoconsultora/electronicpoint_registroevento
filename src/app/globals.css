@@ -65,11 +65,13 @@ body {
 .ep-metallic-text {
   background: linear-gradient(
     110deg,
-    #8b93a1 0%,
-    #f4f6f8 22%,
-    #6b7280 45%,
-    #f4f6f8 68%,
-    #8b93a1 100%
+    var(--ep-blue-deep) 0%,
+    #cfe4fa 20%,
+    var(--ep-blue) 38%,
+    #ffffff 52%,
+    var(--ep-blue) 66%,
+    #cfe4fa 84%,
+    var(--ep-blue-deep) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;

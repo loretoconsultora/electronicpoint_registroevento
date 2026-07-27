@@ -6,7 +6,7 @@ const PERFIL_OPTIONS = [
   "Creador de Contenido",
   "Emprendedor",
   "Marketing",
-  "Para uso personal",
+  "Uso personal",
 ];
 
 const EQUIPO_OPTIONS = [
