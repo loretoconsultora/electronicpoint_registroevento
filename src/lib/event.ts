@@ -4,6 +4,7 @@ export const EVENT_TIME_LABEL = "18:00 hs";
 export const EVENT_TIME_NOTE = "Horario estimado, se confirma más cerca de la fecha";
 export const EVENT_DURATION_LABEL = "45 min de contenido 100% práctico";
 export const EVENT_ADDRESS = "Costa Rica 5509, Palermo, CABA";
+export const EVENT_ADDRESS_SHORT = "Costa Rica 5509, Palermo";
 export const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Costa+Rica+5509%2C+Palermo%2C+CABA";
 export const INSTAGRAM_URL = "https://www.instagram.com/electronicpoint.ar/";
@@ -18,3 +19,9 @@ export const YOUTUBE_VIDEO_ID = "";
 // Fotos del local/evento para la galería. Agregar los archivos a /public/gallery
 // y completar las rutas acá (ej. "/gallery/local-1.jpg"). Vacío = placeholders.
 export const GALLERY_IMAGES: string[] = [];
+
+// Video de fondo del hero (cielo). Subir el archivo a /public/hero-sky.mp4.
+export const HERO_VIDEO_SRC = "/hero-sky.mp4";
+
+// Ícono del logo para la nav bar. Subir el archivo a /public/logo-icon.png.
+export const LOGO_ICON_SRC = "/logo-icon.png";

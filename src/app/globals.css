@@ -61,3 +61,17 @@ body {
 .ep-live-dot {
   animation: ep-pulse 1.8s ease-in-out infinite;
 }
+
+.ep-metallic-text {
+  background: linear-gradient(
+    110deg,
+    #8b93a1 0%,
+    #f4f6f8 22%,
+    #6b7280 45%,
+    #f4f6f8 68%,
+    #8b93a1 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

@@ -17,14 +17,8 @@ export default function TransformationSection() {
     <section className="border-t border-black/5 bg-white px-5 py-20 sm:px-8 sm:py-28">
       <div className="mx-auto max-w-4xl">
         <div className="text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-ep-blue-light px-4 py-1.5 text-xs font-semibold text-ep-blue-deep">
-            La transformación
-          </span>
-          <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            Entrás improvisando con el celular.{" "}
-            <span className="ep-gradient-text">
-              Salís grabando y editando como un creador profesional.
-            </span>
+          <h2 className="ep-metallic-text mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+            Graba y Edita como un creador profesional
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-black/60">
             No es una charla teórica: es un método completo —de la idea al
