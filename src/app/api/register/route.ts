@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendRegistrationEmail } from "@/lib/mailer";
-import { sendRegistrationToN8n } from "@/lib/n8n";
+import { sendRegistrationWebhook } from "@/lib/webhook";
 
 const PERFIL_OPTIONS = [
   "Creador de Contenido",
@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
 
   const results = await Promise.allSettled([
     sendRegistrationEmail(payload),
-    sendRegistrationToN8n(payload),
+    sendRegistrationWebhook(payload),
   ]);
 
   for (const result of results) {
