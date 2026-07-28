@@ -1,0 +1,91 @@
+{
+  "name": "Electronic Point - Registro Taller",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "electronic-point-registro",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "1f8b6b3a-1111-4a2b-9c3d-000000000001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [260, 300],
+      "webhookId": "electronic-point-registro"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1OX0kfe9tmlOAwfNcojq6G7ZsuirmjtCm_JxStVJf7RM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Registro",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{$json.body.nombre}}",
+            "Teléfono": "={{$json.body.telefono}}",
+            "¿Qué opción te describe mejor?": "={{$json.body.perfil}}",
+            "¿Con qué equipo creás actualmente tu contenido?": "={{$json.body.equipo}}",
+            "¿Confirmás tu asistencia al evento?": "={{$json.body.asistencia}}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "1f8b6b3a-1111-4a2b-9c3d-000000000002",
+      "name": "Google Sheets - Agregar fila",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [500, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_WITH_TU_CREDENCIAL",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"ok\": true } }}",
+        "options": {}
+      },
+      "id": "1f8b6b3a-1111-4a2b-9c3d-000000000003",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [740, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          { "node": "Google Sheets - Agregar fila", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Google Sheets - Agregar fila": {
+      "main": [
+        [
+          { "node": "Respond to Webhook", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}
