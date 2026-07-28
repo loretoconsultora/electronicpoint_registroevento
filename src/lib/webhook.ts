@@ -1,4 +1,10 @@
-import type { RegistrationPayload } from "./mailer";
+export interface RegistrationPayload {
+  nombre: string;
+  telefono: string;
+  perfil: string;
+  equipo: string;
+  asistencia: string;
+}
 
 export async function sendRegistrationWebhook(payload: RegistrationPayload) {
   const webhookUrl = process.env.REGISTRATION_WEBHOOK_URL;

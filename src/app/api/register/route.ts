@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sendRegistrationEmail } from "@/lib/mailer";
 import { sendRegistrationWebhook } from "@/lib/webhook";
 
 const PERFIL_OPTIONS = [
@@ -61,15 +60,10 @@ export async function POST(request: NextRequest) {
 
   const payload = { nombre, telefono, perfil, equipo, asistencia };
 
-  const results = await Promise.allSettled([
-    sendRegistrationEmail(payload),
-    sendRegistrationWebhook(payload),
-  ]);
-
-  for (const result of results) {
-    if (result.status === "rejected") {
-      console.error("Error al registrar inscripción:", result.reason);
-    }
+  try {
+    await sendRegistrationWebhook(payload);
+  } catch (error) {
+    console.error("Error al registrar inscripción:", error);
   }
 
   return NextResponse.json({ ok: true });
