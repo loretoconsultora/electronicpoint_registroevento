@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { RegistrationModalProvider } from "@/components/RegistrationModalProvider";
 import RegistrationModal from "@/components/RegistrationModal";
+import MetaPixel from "@/components/MetaPixel";
+import ClarityScript from "@/components/ClarityScript";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +42,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <MetaPixel />
+        <ClarityScript />
         <RegistrationModalProvider>
           {children}
           <RegistrationModal />

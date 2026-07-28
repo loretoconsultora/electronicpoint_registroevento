@@ -9,6 +9,7 @@ import {
   WHATSAPP_URL,
 } from "@/lib/event";
 import { getStoredUtmParams } from "@/lib/utm";
+import { trackLead } from "@/lib/metaPixel";
 
 const PERFIL_OPTIONS = [
   "Creador de Contenido",
@@ -134,6 +135,7 @@ export default function RegistrationForm({
         throw new Error(data.error || "No se pudo enviar tu registro.");
       }
 
+      trackLead();
       setStatus("success");
     } catch (error) {
       setStatus("error");

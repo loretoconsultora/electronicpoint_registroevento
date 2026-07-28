@@ -76,6 +76,22 @@ con el registro, aunque el usuario tarde en completar el formulario.
 
 Ver `.env.example` para la lista completa de variables.
 
+## Tracking (Meta Pixel + Microsoft Clarity)
+
+- `NEXT_PUBLIC_META_PIXEL_ID` → carga el píxel de Meta en todo el sitio
+  (`src/components/MetaPixel.tsx`). Trackea `PageView` automático y dispara
+  un evento `Lead` (`src/lib/metaPixel.ts`) cuando alguien completa el
+  registro con éxito.
+- `NEXT_PUBLIC_CLARITY_PROJECT_ID` → carga el snippet de Microsoft Clarity
+  (`src/components/ClarityScript.tsx`) para grabaciones de sesión y mapas de
+  calor.
+
+Ambas son opcionales e independientes: si falta alguna, ese script
+simplemente no se carga, sin afectar el resto del sitio. Como van al
+bundle del cliente necesitan el prefijo `NEXT_PUBLIC_` — no son datos
+sensibles, ya quedan visibles en el código fuente de la página una vez
+publicado.
+
 ## Contenido a actualizar cuando lleguen los assets de marca
 
 - Fecha/hora del evento en `src/lib/event.ts` si cambia la confirmación.
