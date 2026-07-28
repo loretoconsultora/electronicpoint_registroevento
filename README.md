@@ -16,17 +16,21 @@ Abrí [http://localhost:3000](http://localhost:3000).
 ## Cómo funciona el registro
 
 El formulario postea a `POST /api/register` (`src/app/api/register/route.ts`),
-que valida los datos y dispara un webhook genérico (`src/lib/webhook.ts`) con
-el registro. Ese webhook es responsable de guardar la fila en la Google Sheet
-del equipo, mandar el email de notificación, y puede disparar otras
-automatizaciones (ej. GoHighLevel). Puede apuntar a n8n o a un Google Apps
-Script — ver abajo.
+que valida los datos y dispara, en paralelo, dos envíos independientes:
 
-Si falta la variable de entorno, el envío se omite sin romper el registro
-(queda un warning en los logs de la función). Cargá en Vercel (Settings →
-Environment Variables):
+1. `src/lib/webhook.ts` → guarda la fila en la Google Sheet del equipo y
+   manda el email de notificación. Puede apuntar a n8n o a un Google Apps
+   Script — ver abajo.
+2. `src/lib/gohighlevel.ts` → carga el lead en GoHighLevel a través de un
+   Inbound Webhook de un Workflow.
 
-- `REGISTRATION_WEBHOOK_URL` → la URL que corresponda según la opción.
+Si falta alguna de las dos variables de entorno, ese envío se omite sin
+romper el registro (queda un warning en los logs de la función) — son
+independientes entre sí. Cargá en Vercel (Settings → Environment Variables):
+
+- `REGISTRATION_WEBHOOK_URL` → la URL que corresponda según la opción (A o B).
+- `GOHIGHLEVEL_WEBHOOK_URL` → la URL del Inbound Webhook del Workflow de
+  GoHighLevel (no requiere API Key ni Location ID).
 
 **Opción A — n8n** (la definitiva, permite encadenar más automatizaciones
 como GoHighLevel):
@@ -58,6 +62,12 @@ Ambas opciones esperan el mismo JSON y escriben en la hoja `Registro`
 las columnas ya existentes: `Nombre`, `Teléfono`,
 `¿Qué opción te describe mejor?`, `¿Con qué equipo creás actualmente tu
 contenido?`, `¿Confirmás tu asistencia al evento?`.
+
+**GoHighLevel**: como el formulario no pide email, el envío usa el teléfono
+como identificador (GoHighLevel exige email o teléfono). El nombre completo
+se separa en `firstName`/`lastName` por el primer espacio. Se mandan también
+`tags: ["Lead", "TallerContenido"]`, `source: "Landing Taller"`, y el perfil,
+equipo y confirmación de asistencia como campos extra.
 
 Ver `.env.example` para la lista completa de variables.
 

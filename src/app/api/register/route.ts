@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendRegistrationWebhook } from "@/lib/webhook";
+import { sendGoHighLevelLead } from "@/lib/gohighlevel";
 
 const PERFIL_OPTIONS = [
   "Creador de Contenido",
@@ -60,10 +61,14 @@ export async function POST(request: NextRequest) {
 
   const payload = { nombre, telefono, perfil, equipo, asistencia };
 
-  try {
-    await sendRegistrationWebhook(payload);
-  } catch (error) {
-    console.error("Error al registrar inscripción:", error);
+  const results = await Promise.allSettled([
+    sendRegistrationWebhook(payload),
+    sendGoHighLevelLead(payload),
+  ]);
+  for (const result of results) {
+    if (result.status === "rejected") {
+      console.error("Error al registrar inscripción:", result.reason);
+    }
   }
 
   return NextResponse.json({ ok: true });
