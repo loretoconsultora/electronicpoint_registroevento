@@ -59,7 +59,20 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const payload = { nombre, telefono, perfil, equipo, asistencia };
+  const utm_source =
+    typeof body.utm_source === "string" ? body.utm_source : undefined;
+  const utm_campaign =
+    typeof body.utm_campaign === "string" ? body.utm_campaign : undefined;
+
+  const payload = {
+    nombre,
+    telefono,
+    perfil,
+    equipo,
+    asistencia,
+    utm_source,
+    utm_campaign,
+  };
 
   const results = await Promise.allSettled([
     sendRegistrationWebhook(payload),

@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { captureUtmParams } from "@/lib/utm";
 
 interface ModalContextValue {
   isOpen: boolean;
@@ -26,6 +27,10 @@ export function RegistrationModalProvider({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const hasAutoOpened = useRef(false);
+
+  useEffect(() => {
+    captureUtmParams();
+  }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {

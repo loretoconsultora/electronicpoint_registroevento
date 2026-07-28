@@ -22,6 +22,8 @@ export async function sendGoHighLevelLead(payload: RegistrationPayload) {
     phone: payload.telefono,
     tags: ["Lead", "TallerContenido"],
     source: "Landing Taller",
+    utm_source: payload.utm_source,
+    utm_campaign: payload.utm_campaign,
     perfil: payload.perfil,
     equipoActual: payload.equipo,
     confirmaAsistencia: payload.asistencia,

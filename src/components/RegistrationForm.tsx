@@ -8,6 +8,7 @@ import {
   INSTAGRAM_URL,
   WHATSAPP_URL,
 } from "@/lib/event";
+import { getStoredUtmParams } from "@/lib/utm";
 
 const PERFIL_OPTIONS = [
   "Creador de Contenido",
@@ -125,7 +126,7 @@ export default function RegistrationForm({
       const response = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, ...getStoredUtmParams() }),
       });
 
       if (!response.ok) {

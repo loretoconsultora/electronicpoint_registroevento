@@ -4,6 +4,8 @@ export interface RegistrationPayload {
   perfil: string;
   equipo: string;
   asistencia: string;
+  utm_source?: string;
+  utm_campaign?: string;
 }
 
 export async function sendRegistrationWebhook(payload: RegistrationPayload) {

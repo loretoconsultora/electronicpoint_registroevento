@@ -69,6 +69,11 @@ se separa en `firstName`/`lastName` por el primer espacio. Se mandan también
 `tags: ["Lead", "TallerContenido"]`, `source: "Landing Taller"`, y el perfil,
 equipo y confirmación de asistencia como campos extra.
 
+Si alguien llega a la landing con `?utm_source=...&utm_campaign=...` en la
+URL (por ejemplo desde un anuncio de Facebook), esos valores se guardan en
+`sessionStorage` apenas carga la página (`src/lib/utm.ts`) y se mandan junto
+con el registro, aunque el usuario tarde en completar el formulario.
+
 Ver `.env.example` para la lista completa de variables.
 
 ## Contenido a actualizar cuando lleguen los assets de marca
