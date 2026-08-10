@@ -1,7 +1,7 @@
 # Electronic Point — Registro al Taller de Creación de Contenido
 
 Landing de información y registro para el taller de creación de contenido
-de Electronic Point (Miércoles 5 de agosto, 18 hs, Costa Rica 5509, Palermo).
+de Electronic Point (Miércoles 19 de agosto, 18 hs, Costa Rica 5509, Palermo).
 Next.js 16 (App Router) + Tailwind CSS 4.
 
 ## Desarrollo local

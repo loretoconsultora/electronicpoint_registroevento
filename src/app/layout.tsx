@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 const TITLE = "Taller de Creación de Contenido | Electronic Point";
 const DESCRIPTION =
-  "Registrate al taller de creación de contenido de Electronic Point. Miércoles 5 de agosto, 18 hs, en nuestro local de Palermo. Cupos limitados a 15 personas.";
+  "Registrate al taller de creación de contenido de Electronic Point. Miércoles 19 de agosto, 18 hs, en nuestro local de Palermo. Cupos limitados a 15 personas.";
 
 export const metadata: Metadata = {
   title: TITLE,

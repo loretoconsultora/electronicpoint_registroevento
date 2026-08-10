@@ -1,5 +1,5 @@
-export const EVENT_DATE_ISO = "2026-08-05T18:00:00-03:00";
-export const EVENT_DATE_LABEL = "Miércoles 5 de agosto";
+export const EVENT_DATE_ISO = "2026-08-19T18:00:00-03:00";
+export const EVENT_DATE_LABEL = "Miércoles 19 de agosto";
 export const EVENT_TIME_LABEL = "18:00 hs";
 export const EVENT_TIME_NOTE = "Horario estimado, se confirma más cerca de la fecha";
 export const EVENT_DURATION_LABEL = "45 min de contenido 100% práctico";
